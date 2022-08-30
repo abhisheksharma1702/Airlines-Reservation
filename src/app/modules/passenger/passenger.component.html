@@ -1,0 +1,36 @@
+<div class="container">
+    <h2 class="card-header">Pessenger Details</h2>
+    <div class="card-body">
+      <form name="PassengerDetails" (ngSubmit)="addPassenger()">
+        <div class="insideform">
+          <div>
+            <label for="ticketId">Ticket Id</label><br>
+            <input type="text" [disabled]="true" [(ngModel)]="passanger.ticketid" name="ticketid" />
+          </div>
+          <div>
+            <label for="name" >Name</label><br>
+            <input type="text" name="name" id="name" [(ngModel)]="passanger.name" />
+          </div>
+          <div>
+            <label for="seatNo" >Seat Number</label><br>
+            <input type="text" name="seatNumber" id="seatNo" [(ngModel)]="passanger.seatNumber" [disabled]="true"/>
+          </div>
+          <div>
+            <label for="gender">Gender</label><br>
+            <select id="gender" name="gender" [(ngModel)]="passanger.gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="Age">Age</label><br>
+            <input type="text" name="age" id="age" [(ngModel)]="passanger.age" />
+          </div>
+          <div>
+            <button type="submit">Make Payment</button>
+          </div>
+        </div>
+      </form>
+    </div>
+

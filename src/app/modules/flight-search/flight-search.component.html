@@ -1,0 +1,60 @@
+<div class="container">
+  <h2 class="card-header">Flight Details</h2>
+  <div class="card-body">
+    <form name="PassengerDetails" (ngSubmit)="listData()">
+      <div class="insideform">
+        <div>
+          <label for="">Departure Airport</label><br>
+          <input type="text" [(ngModel)]="source" name="source"/>
+        </div>
+        <div>
+          <label for="">Destination Airport</label>
+          <input type="text" [(ngModel)]="destination" name="destination" />
+        </div>
+        <div>
+          <label for="">Type of Ticket</label><br>
+          <select for="ticketType">
+            <option>One Way</option>
+            <option>Return</option>
+          </select>
+        </div>
+        <div>
+          <label for="returndate">Return Date</label>
+          <input type="date" id="returndate" />
+        </div>
+        <div>
+          <button type="submit">SEARCH FLIGHTS</button>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Flight</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>JourneyDate</th>
+                <th>Depart</th>
+                <th>Arrival</th>
+                <th>Seats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let l of listItem">
+                <td>{{l.flightId}}</td>
+                <td>{{l.source}}</td>
+                <td>{{l.destination}}</td>
+                <td>{{l.journey_date}}</td>
+                <td>{{l.departure_time}}</td>
+                <td>{{l.arrival_time}}</td>
+                <td>{{l.available_seats}}</td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table> 
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+  
+

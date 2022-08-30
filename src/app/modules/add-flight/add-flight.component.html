@@ -1,0 +1,44 @@
+<div class="container">
+    <h2 class="card-header">Add Flight Page</h2>
+    <div class="card-body">
+      <form name="addFlightForm" (ngSubmit)="addflight()">
+        <div class="insideform">
+          <div>
+            <label for="source">From</label><br>
+            <input type="text" [(ngModel)]="flight.source" name="source" />
+          </div>
+          <div>
+            <label for="destination">To</label><br>
+            <input type="text" [(ngModel)]="flight.destination" name="destination" />
+          </div>
+          <div>
+            <label for="departure_time">Departure</label><br>
+            <input type="time" [(ngModel)]="flight.departure_time" name="departure_time" />
+          </div>
+          <div>
+            <label for="arrival_time">Arrival</label><br>
+            <input type="time" [(ngModel)]="flight.arrival_time" name="arrival_time" />
+          </div>
+          <div>
+            <label for="journey_date">Date</label><br>
+            <input type="date" [(ngModel)]="flight.journey_date" name="journey_date" />
+          </div>
+          <div>
+            <label for="available_seats">Avaialable Seats</label><br>
+            <input type="text" [(ngModel)]="flight.available_seats" name="available_seats" />
+          </div>
+          <div>
+            <label for="retruning">Returning</label><br>
+            <input type="text" [(ngModel)]="flight.retruning" name="retruning">
+          </div>
+          <div>
+            <label for="cost">Flying Cost</label><br>
+            <input type="text" [(ngModel)]="flight.cost" name="cost"/>
+          </div>
+          <div>
+            <button type="submit" class="add">ADD FLIGHT</button>
+          </div>
+        </div>
+      </form>
+    </div>
+

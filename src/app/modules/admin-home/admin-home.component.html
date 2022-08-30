@@ -1,0 +1,34 @@
+<nav>
+    <a routerLink="add-flight">Add Flight</a> &nbsp; &nbsp;
+    <a routerLink="deleteflight">Delete Flight</a> <br><br>
+
+    <div>
+        <button (click)="listData()">Search Flights</button> &nbsp; &nbsp;
+        <table class="container">
+            <thead>
+                <tr>
+                  <th>FlightID</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>JourneyDate</th>
+                  <th>Departure</th>
+                  <th>Arrival</th>
+                  <th>Seats</th>
+                </tr>
+              </thead>
+        <tbody>
+          <tr *ngFor="let l of listItem">
+            <td>{{l.flightId}}</td>
+            <td>{{l.source}}</td>
+            <td>{{l.destination}}</td>
+            <td>{{l.journey_date}}</td>
+            <td>{{l.departure_time}}</td>
+            <td>{{l.arrival_time}}</td>
+            <td>{{l.available_seats}}</td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table> 
+    </div>
+    
+</nav>

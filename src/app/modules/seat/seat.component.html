@@ -1,0 +1,14 @@
+
+    <div class="main-cont">
+        <div class="disp-cont">
+            <div class="inside-cont">
+                <div class="inside-seats-left">
+                    <div class="seat" *ngFor="let person of Dummyarray">
+                       <button id="{{person.seatNo}}" name="seatNo" (click)="save(person.seatNo)">{{person.seatNo}}</button>
+                    </div>
+                </div>
+            <br>
+            </div>
+        </div>
+        <button (click)="bookSeat()">submit</button>
+    </div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="card-header">Registation Page</h2>
+    <div class="card-body">
+      <form name="registerForm" (ngSubmit)="addReg()">
+        <div class="insideform">
+          <div>
+            <label for="title" id="title" >Title</label><br>
+                <select name="title" [(ngModel)]="reg.title">
+                  <option value=""></option>
+                  <option value="Mr">Mr</option>
+                  <option value="Mrs">Mrs</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Ms">Ms</option>
+                </select>
+          </div>
+          <div>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstName" [(ngModel)]="reg.firstName" id="firstName"  />
+          <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastName" [(ngModel)]="reg.lastName" />
+          </div>
+          <div>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" [(ngModel)]="reg.email"/>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" #password="ngModel" id="password" [(ngModel)]="reg.password" />
+          <div>
+            <label for="confirmp">Confirm Password</label>
+            <input type="password" name="confirmp" required/>
+          </div>
+          <div>
+            <label for="dob">Date_of_Birth</label>
+            <input type="date" name="dob" [(ngModel)]="reg.dob"/>
+          </div>
+          <div>
+            <label for="mobile">Phone Number</label>
+            <input type="text" name="mobile" id="mobile" [(ngModel)]="reg.phoneNumber" />
+        </div>
+          </div>
+          <div>
+            <button class="signup">Sign Up</button>
+            <button class="cancel" (click)="onReset()" type="reset">Cancel</button>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>

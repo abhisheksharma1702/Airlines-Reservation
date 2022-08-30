@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 class="card-header">Flight Select</h2>
+    <div class="card-body">
+      <form name="TicketDetails" (ngSubmit)="addTicket()">
+        <div class="insideform">
+          <div>
+            <label for="flight_id">Select Flight</label><br>
+            <mat-select (click)="listAllFlights()" [(ngModel)]="ticket.flightId" name="flightId">
+              <mat-option *ngFor="let l of listItem" value="{{l.flightId}}"> {{l.flightId}}     | Flight Flying From {{l.source}} to {{l.destination}} on {{l.journey_date}} at {{l.departure_time}}</mat-option>
+            </mat-select>
+          </div>
+          <div>
+            <label for="ticket">Type Of Ticket</label><br>
+            <select id="ticket" name="type_of_ticket" (change)="calculateTicketAmt()" [(ngModel)]="ticket.type_of_ticket">
+              <option value="Economy">Economy</option>
+              <option value="Business">Business</option>
+            </select>
+          </div>
+          <div>
+            <label for="bookingDate">Date of Booking</label><br>
+            <input type="text" [(ngModel)]="ticket.date_of_booking" name="date_of_booking" id="bookingDate" [disabled]="true"/>
+          </div>
+          <div>
+            <label for="status">Status</label><br>
+            <input id="status" [disabled]="true" [(ngModel)]="ticket.status" name="status" />
+          </div>
+          <div>
+            <label for="ticketAmt">Ticket Amount</label><br>
+            <input type="text" id="ticketamt" [disabled]="true" [(ngModel)]="ticket.ticket_amount" name="ticket_amount"/>
+          </div>
+          <div>
+            <label for="userId">User ID</label><br>
+            <input type="text" name="userId" id="userId" [disabled]="true" value="{{ticket.userid}}" [(ngModel)]="ticket.userid"/>
+          </div>
+          <div>
+            <button type="submit">Book Ticket</button>
+          </div>
+        </div>
+      </form>
+    </div>
+

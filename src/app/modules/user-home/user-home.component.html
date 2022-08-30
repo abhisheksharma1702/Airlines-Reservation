@@ -1,0 +1,35 @@
+<nav>
+    <a routerLink="flight-search">Search Flight</a> &nbsp; &nbsp;
+    <a routerLink="booktickets">Book Tickets</a> &nbsp; &nbsp;
+    <a routerLink="cancelticket">Cancel Ticket</a>
+
+    <div>
+        <button (click)="listData()">Booked Ticket History</button> &nbsp; &nbsp;
+        <table class="container">
+            <thead>
+                <tr>
+                  <th>TicketID</th>
+                  <th>Ticket Type</th>
+                  <th>JourneyDate</th>
+                  <th>Status</th>
+                  <th>FlightID</th>
+                  <th>Ticket Amount</th>
+                  <th>UserID</th>
+                </tr>
+              </thead>
+        <tbody>
+          <tr *ngFor="let l of listItem">
+            <td>{{l.ticketid}}</td>
+            <td>{{l.type_of_ticket}}</td>
+            <td>{{l.date_of_booking}}</td>
+            <td>{{l.status}}</td>
+            <td>{{l.flightId}}</td>
+            <td>{{l.ticket_amount}}</td>
+            <td>{{l.userid}}</td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table> 
+    </div>
+    
+</nav>

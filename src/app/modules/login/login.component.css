@@ -1,0 +1,141 @@
+
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+}
+
+body {
+  background:#a2a397;
+}
+.login-form {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:350px;
+  height:550px;
+  background:#f5f5f5;
+  overflow:hidden;
+  box-shadow:10px 6px 10px #555;
+}
+
+.form-container .user-link {
+  margin-bottom:5px;
+  font-size:15px;
+  font-weight:600;
+  color:#375fbb;
+  font-family:"Open Sans","Raleway",sans-serif;  
+}
+.form-container .admin-link {
+  margin-bottom:20px;
+  font-size:15px;
+  font-weight:600;
+  color:#375fbb;
+  font-family:"Open Sans","Raleway",sans-serif;  
+}
+
+.login-form:before,.login-form:after {
+  content:"";
+  position:absolute;
+  top:0px;
+  width:150%;
+  height:150px;
+} 
+
+.login-form:before {
+  background:#375fbb;
+  height:180px;
+  transform: translate(-80px,-100px) rotate(-28deg);
+}
+.login-form:after {
+  background:rgba(0,0,0,0.38);
+  transform: translate(0px,-55px) rotate(20deg);
+  z-index:2;
+}
+
+.form-container {
+  margin-top:180px;
+  height:calc(100% - 180px);
+  padding:0px 40px;
+  text-align:center;
+}
+.form-container .form-element {
+  position:relative;
+  margin:15px 0px;
+}
+
+.form-container .form-heading {
+  margin-bottom:30px;
+  font-size:32px;
+  font-weight:600;
+  color:#375fbb;
+  font-family:"Open Sans","Raleway",sans-serif;  
+}
+.form-container .form-element input {
+  width:100%;
+  font-size:18px;
+  padding:12px;
+  text-indent:50px;
+  background:#ddd;
+  border:none;
+  outline:none;
+}
+.form-container .form-element label {
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform:translateY(-50%);
+  color:#888;
+}
+.form-container .form-element label:after {
+  content:"";
+  position:absolute;
+  top:-5px;
+  left:30px;
+  width:2px;
+  height:25px;
+  background:#aaa;
+ }
+
+.form-container .form-element button {
+  width:100%;
+  padding:12px;
+  font-size:18px;
+  border:none;
+  outline:none;
+  background:#557ace;
+  color:#f5f5f5;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-family:"Open Sans","Raleway",sans-serif;
+  font-weight:600;  
+}
+
+.form-container .form-element a {
+  color:#004ddc;
+  font-weight:600;
+  font-size:15px;
+  font-family:"Open Sans","Raleway",sans-serif;
+  text-decoration:none;
+}
+.form-container .form-element.signup-link {
+  position:absolute;
+  width:calc(100% - 80px);
+  bottom:5px;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: #002770;
+  margin-top: 5px;
+  width: 100%;
+  padding: 5px;
+  height: 50px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 1000;
+  font-family:"Open Sans","Raleway",sans-serif;
+  background-color: rgb(170, 88, 88);
+}

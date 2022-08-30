@@ -1,0 +1,64 @@
+.main-cont {
+    height: 90vh;
+    border: 2px solid blue;
+}
+
+.nav-bar {
+    height: 50px;
+    width: 100%;
+    background-color: aqua;
+}
+
+.disp-cont {
+    display: flex;
+    justify-content: center;
+    height: 83%;
+    background-color: aquamarine;
+}
+
+.inside-cont {
+    padding: 5px;
+    display: flex;
+    width: 50%;
+    height: auto;
+}
+
+.inside-seats-left {
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-bottom: black solid 5px;
+    padding-top: 25px;
+    padding-left: 10px;
+    column-count: 3;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.inside-seats-right {
+    border-top: black solid 1px;
+    border-bottom: black solid 5px;
+    border-right: black solid 1px;
+    padding-top: 25px;
+    padding-left: 10px;
+    column-count: 3;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.seat {
+    border-radius: 5px;
+    align-content: center;
+    margin-bottom: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: red;
+}
+
+.inside-seats {
+    display: flex;
+}
+
+
+

@@ -1,0 +1,36 @@
+
+<form class="login-form" (ngSubmit)="login()">
+    <div class="form-container">
+      <div class="form-heading">
+        User Login
+    
+      
+      <div class="form-element">
+        <label class="fa fa-user" for="login-username"></label>
+        <input type="text" placeholder="Username" [(ngModel)]="email" name="email" id="login-username"/> 
+      </div>
+      <div class="form-element">
+        <label class="fa fa-lock" for="login-password"></label>
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" id="login-password"/> 
+      </div> 
+
+
+      <div class="form-element">
+        <button type="submit" id="login-submit">Login</button>
+        <tr></tr>
+      </div>   
+
+
+      <div class="form-element login-forgot-password">
+        <a href="http://localhost:4200/login/adminlogin">Admin Login?</a>
+      </div>
+      <div class="form-element login-forgot-password">
+        <a href="http://localhost:4200/forgotpassword">Forgot password?</a>
+      </div>
+      <div class="form-element signup-link">
+        <a href="http://localhost:4200/registation">Create an account</a>
+      </div>    
+
+    </div>
+  </div>
+</form>

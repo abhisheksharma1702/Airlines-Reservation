@@ -1,0 +1,32 @@
+<div class="container">
+    <h2 class="card-header">Payment Details</h2>
+    <div class="card-body">
+      <form name="PassengerDetails" (ngSubmit)="addPayment()">
+        <div class="insideform">
+          <div>
+            <label for="ticketId">Ticket Id</label><br>
+            <input type="text" [(ngModel)]="payment.ticketId" name="ticketId" [disabled]="true" />
+          </div>
+          <div>
+            <label for="userid" >UserId</label><br>
+            <input type="text" name="userid" id="userid" [(ngModel)]="payment.userId" [disabled]="true"/>
+          </div>
+          <div>
+            <label for="paymentType">Payment Through</label><br>
+            <select id="paymentType" name="paymentType" [(ngModel)]="payment.payment_method" >
+              <option value="Debit Card">Debit Card</option>
+              <option value="Credit Card">Credit Card</option>
+            </select>
+          </div>
+          <div>
+            <label for="Amount">Amount To Pay</label><br>
+            <input type="text" name="Amount" id="Amount" [(ngModel)]="payment.amount" [disabled]="true" />
+          </div>
+          <div>
+            <button type="submit">Complete Payment</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+    
