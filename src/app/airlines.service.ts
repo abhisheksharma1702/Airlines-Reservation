@@ -14,15 +14,24 @@ export class AirlinesService {
   url = "http://localhost:8089"
 
   userId = 0;
+
   user :User = {"id": 0, "title":"", "firstName":"", "lastName":"", "email": "", "password":"", "dob": "", "phoneNumber":""};;
   
   ticketid: number;
 
-  selectedSeat: string = "0";
+  selectedSeat: any = [];
 
   slectedFlight:number = 0;
 
   paymentAmt: string="0";
+
+  totalPassenger: number = 1;
+
+  ticketDetails: any = [];
+
+  passengerDetails: any = [];
+
+  flightDetails: any = [];
 
   List(source:string, destination:string){
     return this.http.get(`${this.url+"/allFlights/"+source+"/"+destination}`); 
@@ -55,6 +64,11 @@ export class AirlinesService {
      return this.http.post(`${this.url+"/addflight"}`,flight);
   }
 
+  updateFlight(flight:Object):Observable<Object>
+  {
+     return this.http.put(`${this.url+"/updateflight"}`,flight);
+  }
+
   saveTicket(ticket:Object):Observable<Object>
   {
      return this.http.post(`${this.url+"/ticket"}`,ticket);
@@ -79,11 +93,15 @@ export class AirlinesService {
   }
 
   confirmTicket(id:number){
-    return this.http.put(`${this.url+"/confirmTicket/"+id}`,id);
+    return this.http.put(`${this.url+"/confirmTicket"}`,id);
   }
 
   TicketHistory(id:number){
     return this.http.get(`${this.url+"/findTicketsForUser/"+id}`); 
+  }
+
+  Ticket(id:number){
+    return this.http.get(`${this.url+"/findTicket/"+id}`); 
   }
 
   availableFlightSeat(id:number){
@@ -98,5 +116,30 @@ export class AirlinesService {
   bookSeat(number:string,flightid:number)
   {
     return this.http.put(`${this.url+"/bookSeat/"+flightid+"/"+number}`,number);
+  }
+
+  FlightDetail(id:number)
+  {
+    return this.http.get(`${this.url+"/Flight/"+id}`);
+  }
+
+  mail(mail:string):Observable<Object>
+  {
+     return this.http.get(`${this.url+"/forgetPassword/"+mail}`);
+  }
+
+  mailTicket(mail:Object):Observable<Object>
+  {
+     return this.http.post(`${this.url+"/sendMail"}`,mail);
+  }
+
+  getUser(mail:string):Observable<Object>
+  {
+     return this.http.get(`${this.url+"/user/"+mail}`);
+  }
+
+  updatePassword(user:Object):Observable<Object>
+  {
+     return this.http.put(`${this.url+"/updateUser/"}`,user);
   }
 }

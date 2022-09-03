@@ -1,36 +1,46 @@
 <div class="container">
     <h2 class="card-header">Pessenger Details</h2>
     <div class="card-body">
-      <form name="PassengerDetails" (ngSubmit)="addPassenger()">
+      <form name="PassengerDetails" #addPassengerForm="ngForm" (ngSubmit)="addPassenger()">
         <div class="insideform">
-          <div>
-            <label for="ticketId">Ticket Id</label><br>
-            <input type="text" [disabled]="true" [(ngModel)]="passanger.ticketid" name="ticketid" />
-          </div>
-          <div>
+        <table>
+          <tr *ngFor="let l of passanger">
+            <h4>Add Seat Number {{l.seatNumber}} Passanger Detail </h4> <br>
+            <div>
             <label for="name" >Name</label><br>
-            <input type="text" name="name" id="name" [(ngModel)]="passanger.name" />
-          </div>
-          <div>
-            <label for="seatNo" >Seat Number</label><br>
-            <input type="text" name="seatNumber" id="seatNo" [(ngModel)]="passanger.seatNumber" [disabled]="true"/>
-          </div>
-          <div>
+            <input type="text" name="name" id="name" [(ngModel)]="l.name" #name="ngModel" required/>
+            <div *ngIf="name.touched && !name.valid">
+              <div *ngIf="name.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter name</div>
+          </div> 
+            </div>
+            <div>
             <label for="gender">Gender</label><br>
-            <select id="gender" name="gender" [(ngModel)]="passanger.gender">
+            <select id="gender" name="gender" [(ngModel)]="l.gender" #gender="ngModel" required>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
-          </div>
-          <div>
+            <div *ngIf="gender.touched && !gender.valid">
+              <div *ngIf="gender.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please select gender</div>
+          </div> 
+            </div>
+            <div>
             <label for="Age">Age</label><br>
-            <input type="text" name="age" id="age" [(ngModel)]="passanger.age" />
+            <input type="text" name="age" id="age" [(ngModel)]="l.age" #age="ngModel" required/>
+            <div *ngIf="age.touched && !age.valid">
+              <div *ngIf="age.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter  age</div>
           </div>
-          <div>
+            </div>
+            <hr>
+            <br>
+          </tr>
+        </table>  
+        <br>
+        <br>
+          <div *ngIf="addPassengerForm.valid">
             <button type="submit">Make Payment</button>
           </div>
-        </div>
+          </div>
       </form>
     </div>
-
+</div>

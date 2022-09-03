@@ -5,9 +5,11 @@
     box-sizing:border-box;
   }
   
-  body {
-    background:#a2a397;
-  }
+ 
+body {
+  padding-bottom: 50%;
+}
+
   .login-form {
     position:absolute;
     top:50%;

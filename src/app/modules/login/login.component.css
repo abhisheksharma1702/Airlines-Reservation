@@ -6,8 +6,9 @@
 }
 
 body {
-  background:#a2a397;
+  padding-bottom: 50%;
 }
+
 .login-form {
   position:absolute;
   top:50%;
@@ -69,7 +70,7 @@ body {
   margin-bottom:30px;
   font-size:32px;
   font-weight:600;
-  color:#375fbb;
+  color:#bb3737;
   font-family:"Open Sans","Raleway",sans-serif;  
 }
 .form-container .form-element input {
@@ -128,7 +129,7 @@ body {
 button {
   border: none;
   outline: none;
-  color: #002770;
+  color: wheat;
   margin-top: 5px;
   width: 100%;
   padding: 5px;
@@ -137,5 +138,5 @@ button {
   font-size: 15px;
   font-weight: 1000;
   font-family:"Open Sans","Raleway",sans-serif;
-  background-color: rgb(170, 88, 88);
+  background-color: rgb(46, 3, 146)
 }

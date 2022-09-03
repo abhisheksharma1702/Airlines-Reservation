@@ -20,14 +20,20 @@ export class BookTicketsComponent implements OnInit {
   addTicket()
   {
     this.airService.slectedFlight=this.ticket.flightId;
-    this.ticket.no_of_pasanger=1;
+    this.airService.totalPassenger=this.ticket.no_of_pasanger;
+    if(this.ticket.no_of_pasanger>=1){
     this.airService.saveTicket(this.ticket).subscribe((response)=>
       {
         this.airService.ticketid=Number(response);
+        this.airService.ticketDetails=response;
         this.airService.paymentAmt=this.ticket.ticket_amount;
         this.ticket = new TicketDetails();
         this.route.navigate(['userhome/booktickets/seat-select']);
       });
+    }
+    else{
+      alert("Provide Correct Passenger Details");
+    }
   }
 
   listAllFlights(){
@@ -42,15 +48,17 @@ export class BookTicketsComponent implements OnInit {
     this.ticket.date_of_booking=now.toLocaleDateString();
     this.ticket.no_of_pasanger=1;
     this.ticket.userid = this.airService.user.id;
+    this.ticket.type_of_ticket="Economy";
+    this.ticket.ticket_amount="10000";
   }
 
   calculateTicketAmt(){
     if(this.ticket.type_of_ticket==="Business")
     {
-      this.ticket.ticket_amount = String(this.ticket.no_of_pasanger*1500);
+      this.ticket.ticket_amount = String(this.ticket.no_of_pasanger*15000);
     }
     else{
-      this.ticket.ticket_amount = String(this.ticket.no_of_pasanger*1000);;
+      this.ticket.ticket_amount = String(this.ticket.no_of_pasanger*10000);;
     }
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AirlinesService } from 'src/app/airlines.service';
+import { Router } from '@angular/router';
+import { MailDetails } from './mail-details';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotpasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private airSer:AirlinesService, private route:Router) { }
 
-  ngOnInit(): void {
+  mail: MailDetails = new MailDetails();
+  userMail:string;
+
+  email(){
+      this.mail.recipient=this.userMail;
+      alert("Check your email inbox!!");
+      this.airSer.mail(this.mail.recipient).subscribe((response)=>{
+      }); 
   }
+
+  ngOnInit(): void {}
 
 }

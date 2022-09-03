@@ -22,9 +22,12 @@ export class UserloginComponent implements OnInit {
       this.listItem=response;
       if(this.listItem.length)
       {
-        this.route.navigate(["/userhome"]);
         this.user = this.listItem[0];
         this.regService.setUser(this.user);
+        this.route.navigate(["/userhome"]);
+      }
+      else{
+        alert("Username and Password is wrong");
       }
     }); 
   }

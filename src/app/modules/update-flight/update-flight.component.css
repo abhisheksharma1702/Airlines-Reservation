@@ -7,18 +7,16 @@
   }
   .insideform{
     margin-left: 30px;
-  }
-  
-  input, select, mat-select, button{
+}
+input, select, mat-select{
     width: 90%;
     padding: 10px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
-  }
-  
-  .add{
+}
+.add{
     background-color: #516bdf;
     color: white;
     padding: 16px 20px;
@@ -35,38 +33,10 @@
     text-align: center;
     margin-bottom: 20px;
   }
-    
-    
-    body {
-      font-family: 'Nunito', sans-serif;
-      color: #384047;
-    }
-    
-    thead th {
-      font-weight: 400;
-      background: #23323d;
-      color: #FFF;
-    }
-    
-    tr {
-      background: #f4f7f8;
-      border-bottom: 1px solid #FFF;
-      margin-bottom: 5px;
-    }
-    
-    tr:nth-child(even) {
-      background: #e8eeef;
-    }
-    
-    th, td {
-      text-align: left;
-      padding: 20px;
-      font-weight: 300;
-    }
-  
-     
+
+   
 button {
-  background-color: rgb(116, 201, 116);
+  background-color: rgb(201, 150, 116);
   border-radius: 0px;
   box-shadow: rgb(214, 123, 62) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
   color: black;
@@ -86,3 +56,4 @@ button {
 button:hover {
   box-shadow: rgba(53, 44, 187, 0.35) 0 -25px 18px -14px inset,rgba(231, 108, 7, 0.993) 0 1px 2px,rgb(6, 134, 238) 0 2px 4px,rgba(251, 255, 0, 0.884) 0 4px 8px,rgb(255, 0, 200) 0 8px 16px,rgba(240, 240, 240, 0.877) 0 16px 32px;
 }
+

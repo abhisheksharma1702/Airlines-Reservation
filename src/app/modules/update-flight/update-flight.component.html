@@ -1,18 +1,27 @@
 <div class="container">
-    <h2 class="card-header">Add Flight Page</h2>
+    <h2 class="card-header">Update Flight Details</h2>
     <div class="card-body">
-      <form name="addFlightForm"  #addFlightForm="ngForm" (ngSubmit)="addflight()">
+      <form name="addFlightForm" #updateFlightForm="ngForm" (ngSubmit)="addflight()">
         <div class="insideform">
+            <div>
+                <label for="flight_id">Select Flight Id</label><br>
+                <mat-select (click)="listAllFlights()" [(ngModel)]="flight.flightId" #flightId="ngModel" required name="flightId">
+                  <mat-option *ngFor="let l of listItem" value="{{l.flightId}}"> {{l.flightId}} </mat-option>
+                </mat-select>
+                <div *ngIf="flightId.touched && !flightId.valid">
+                  <div *ngIf="flightId.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter flight_id</div>
+              </div> 
+              </div>
           <div>
             <label for="source">From</label><br>
-            <input type="text" [(ngModel)]="flight.source"  #source="ngModel" required name="source" />
+            <input type="text" [(ngModel)]="flight.source" #source="ngModel" required name="source" />
             <div *ngIf="source.touched && !source.valid">
               <div *ngIf="source.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter source</div>
           </div> 
           </div>
           <div>
             <label for="destination">To</label><br>
-            <input type="text" [(ngModel)]="flight.destination" name="destination" #destination="ngModel" required/>
+            <input type="text" [(ngModel)]="flight.destination" #destination="ngModel" required name="destination" />
             <div *ngIf="destination.touched && !destination.valid">
               <div *ngIf="destination.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter destination</div>
           </div> 
@@ -22,42 +31,42 @@
             <input type="time" [(ngModel)]="flight.departure_time" #departure_time="ngModel" required name="departure_time" />
             <div *ngIf="departure_time.touched && !departure_time.valid">
               <div *ngIf="departure_time.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter departure_time</div>
-          </div>
+          </div> 
           </div>
           <div>
             <label for="arrival_time">Arrival</label><br>
             <input type="time" [(ngModel)]="flight.arrival_time" #arrival_time="ngModel" required name="arrival_time" />
             <div *ngIf="arrival_time.touched && !arrival_time.valid">
               <div *ngIf="arrival_time.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter arrival_time</div>
-          </div>
+          </div> 
           </div>
           <div>
             <label for="journey_date">Date</label><br>
-            <input type="date" [(ngModel)]="flight.journey_date"#journey_date="ngModel" required name="journey_date" />
+            <input type="date" [(ngModel)]="flight.journey_date" #journey_date="ngModel" required name="journey_date" />
             <div *ngIf="journey_date.touched && !journey_date.valid">
               <div *ngIf="journey_date.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter journey_date</div>
           </div>
           </div>
           <div>
             <label for="available_seats">Avaialable Seats</label><br>
-            <input type="text" [(ngModel)]="flight.available_seats" name="available_seats" [disabled]="true" />
+            <input type="text" [(ngModel)]="flight.available_seats"  name="available_seats" [disabled]="true" />
           </div>
           <div>
             <label for="retruning">Returning</label><br>
-            <select [(ngModel)]="flight.retruning" #retruning="ngModel" required  name="retruning">
+            <select [(ngModel)]="flight.retruning" name="retruning" #retruning="ngModel" required>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
             <div *ngIf="retruning.touched && !retruning.valid">
-              <div *ngIf="retruning.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please enter retruning</div>
+              <div *ngIf="retruning.errors['required']" [ngStyle]="{color:'red','font-size':'10px'}">Please select retruning</div>
           </div>
           </div>
           <div>
             <label for="cost">Flying Cost</label><br>
             <input type="text" [(ngModel)]="flight.cost" name="cost" [disabled]="true"/>
           </div>
-          <div *ngIf="addFlightForm.valid">
-            <button type="submit" class="add">ADD FLIGHT</button>
+          <div>
+            <button type="submit" class="add">UPDATE FLIGHT DETAILS</button>
           </div>
         </div>
       </form>

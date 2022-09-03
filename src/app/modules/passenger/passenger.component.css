@@ -1,4 +1,4 @@
-.container {
+.container, table, tr{
     padding: 16px;
     background-color: white;
     border: 4px solid black;
@@ -35,7 +35,25 @@ input, select, mat-select, button{
     text-align: center;
     margin-bottom: 20px;
   }
+   
+button {
+  background-color: gray;
+  border-radius: 0px;
+  box-shadow: rgb(214, 123, 62) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-  button{
-    background-color: #5baf6d;
-  }
+button:hover {
+  box-shadow: rgba(53, 44, 187, 0.35) 0 -25px 18px -14px inset,rgba(231, 108, 7, 0.993) 0 1px 2px,rgb(6, 134, 238) 0 2px 4px,rgba(251, 255, 0, 0.884) 0 4px 8px,rgb(255, 0, 200) 0 8px 16px,rgba(240, 240, 240, 0.877) 0 16px 32px;
+}

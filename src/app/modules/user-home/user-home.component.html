@@ -1,14 +1,18 @@
-<nav>
-    <a routerLink="flight-search">Search Flight</a> &nbsp; &nbsp;
-    <a routerLink="booktickets">Book Tickets</a> &nbsp; &nbsp;
-    <a routerLink="cancelticket">Cancel Ticket</a>
+<nav class="c1">
+    <h1>Welcome {{name}} to Wing Airlines Service!!</h1><br>
+    <button routerLink="flight-search">Search Flight</button> &nbsp; &nbsp;
+    <button routerLink="booktickets">Book Tickets</button> &nbsp; &nbsp;
+    <button routerLink="cancelticket">Cancel Ticket</button> &nbsp; &nbsp;
+    <button routerLink="booktickets/seat-select/passenger/payment/ticket">Ticket</button>
+    <button routerLink="../login">Logout</button>
 
     <div>
-        <button (click)="listData()">Booked Ticket History</button> &nbsp; &nbsp;
+        <button (click)="listData()">Ticket History</button> &nbsp; &nbsp;
         <table class="container">
             <thead>
                 <tr>
                   <th>TicketID</th>
+                  <th>Number of Passenger</th>
                   <th>Ticket Type</th>
                   <th>JourneyDate</th>
                   <th>Status</th>
@@ -20,6 +24,7 @@
         <tbody>
           <tr *ngFor="let l of listItem">
             <td>{{l.ticketid}}</td>
+            <td>{{l.no_of_pasanger}}</td>
             <td>{{l.type_of_ticket}}</td>
             <td>{{l.date_of_booking}}</td>
             <td>{{l.status}}</td>

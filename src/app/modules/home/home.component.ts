@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  img1 = './assets/images/airplane.jpg';
+  img1 = './assets/images/bg.jpg';
 
   ngOnInit(): void {
   }

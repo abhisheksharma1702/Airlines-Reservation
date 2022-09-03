@@ -1,23 +1,22 @@
-body{
-  margin:0;
-  padding: 0;
-  background-color: rgba(20, 120, 200, 0.6);
-  background-size: cover;
-  font-family: sans-serif;
 
+.c1{
+  padding-top: 20%;
+  padding-bottom: 30%;
 }
+
 h1{
-  color: #fff;
+  color: rgb(16, 35, 43);
   font-size: 30px;
 }
 
-.box{
+/* .box{
   position: absolute;
   top: 50%;
   left: 50%; 
   width: 500px;
   transform: translate(-50%,-50%);
-}
+} */
+
 input{
   position: relative;
   display: inline-block;
@@ -29,7 +28,7 @@ input{
 input[type="text"]{
   background: #fff;
   height:50px;
-  border: none;
+  border-color:black ;
   outline: none;
   padding: 0 25px;
   border-radius: 25px 0 0 25px;
@@ -41,7 +40,7 @@ input[type="submit"]{
   border-radius: 0 25px 25px 0;
   width: 150px;
   height: 50px;
-  border: none;
+  border-color: black;
   outline: none;
   cursor: pointer;
   background: #506b7c;
@@ -50,29 +49,4 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
   background: red;
-}
-
-#header {
-	background-color: #fff;
-	position: fixed;
-	width: 100%;
-}
-
-nav ul,
-footer ul {
-	float: right;
-	margin-right: 2em;
-}
-nav li,
-footer li {
-	padding: 1px;
-	display: inline-block;
-}
-
-a {
-	text-decoration: none;
-}
-
-hr {
-	background-color: #000;
 }

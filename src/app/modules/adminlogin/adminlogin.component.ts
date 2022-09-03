@@ -22,6 +22,9 @@ export class AdminloginComponent implements OnInit {
       {
         this.route.navigate(["/adminhome"]);
       }
+      else{
+        alert("Wrong Admin Details");
+      }
     }); 
   }
 

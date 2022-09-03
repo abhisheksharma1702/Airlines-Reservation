@@ -10,6 +10,10 @@
             </mat-select>
           </div>
           <div>
+            <label for="no_of_pasanger" >Number of Pasanger</label><br>
+            <input type="text" id="totalPasanger" (change)="calculateTicketAmt()" name="no_of_pasanger" id="totalPasanger" [(ngModel)]="ticket.no_of_pasanger"/>
+          </div>
+          <div>
             <label for="ticket">Type Of Ticket</label><br>
             <select id="ticket" name="type_of_ticket" (change)="calculateTicketAmt()" [(ngModel)]="ticket.type_of_ticket">
               <option value="Economy">Economy</option>
@@ -22,7 +26,7 @@
           </div>
           <div>
             <label for="status">Status</label><br>
-            <input id="status" [disabled]="true" [(ngModel)]="ticket.status" name="status" />
+            <input id="status" [disabled]="true" [(ngModel)]="ticket.status" name="status"/>
           </div>
           <div>
             <label for="ticketAmt">Ticket Amount</label><br>
@@ -33,7 +37,7 @@
             <input type="text" name="userId" id="userId" [disabled]="true" value="{{ticket.userid}}" [(ngModel)]="ticket.userid"/>
           </div>
           <div>
-            <button type="submit">Book Ticket</button>
+            <button type="submit" class="btn">Book Ticket</button>
           </div>
         </div>
       </form>

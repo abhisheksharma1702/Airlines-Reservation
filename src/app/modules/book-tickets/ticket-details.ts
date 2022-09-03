@@ -1,3 +1,5 @@
+import { PassengerDetails } from "../passenger/passenger-details";
+
 export class TicketDetails {
     ticketid:number;
 	no_of_pasanger:number;
@@ -7,4 +9,5 @@ export class TicketDetails {
 	flightId:number;
 	ticket_amount:string;
 	userid:number;
+	passangerList: PassengerDetails[];
 }

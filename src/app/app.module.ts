@@ -23,6 +23,10 @@ import { PaymentComponent } from './modules/payment/payment.component';
 import { AdminloginComponent } from './modules/adminlogin/adminlogin.component';
 import { CancelTicketComponent } from './modules/cancel-ticket/cancel-ticket.component';
 import { SeatComponent } from './modules/seat/seat.component';
+import { TicketComponent } from './modules/ticket/ticket.component';
+import { UpdateFlightComponent } from './modules/update-flight/update-flight.component';
+import { ChangepasswordComponent } from './modules/changepassword/changepassword.component';
+import { ForgotpasswordComponent } from './modules/forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { SeatComponent } from './modules/seat/seat.component';
     PaymentComponent,
     AdminloginComponent,
     CancelTicketComponent,
-    SeatComponent
+    SeatComponent,
+    TicketComponent,
+    UpdateFlightComponent,
+    ChangepasswordComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

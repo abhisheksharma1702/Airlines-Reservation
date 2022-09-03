@@ -11,6 +11,8 @@ export class UserHomeComponent implements OnInit {
 
   constructor(private regService: AirlinesService, private route: Router) { }
 
+  name : string;
+
   userid : number;
   
   listItem:any=[];
@@ -23,6 +25,7 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userid=this.regService.user.id;
+    this.name=this.regService.user.firstName + " " + this.regService.user.lastName;
   }
 
 }

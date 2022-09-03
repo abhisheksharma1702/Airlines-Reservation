@@ -1,50 +1,87 @@
 <div class="container">
     <h2 class="card-header">Registation Page</h2>
     <div class="card-body">
-      <form name="registerForm" (ngSubmit)="addReg()">
+      <form name="registerForm" #registerForm="ngForm" (ngSubmit)="addReg()">
         <div class="insideform">
           <div>
             <label for="title" id="title" >Title</label><br>
-                <select name="title" [(ngModel)]="reg.title">
+                <select name="title" [(ngModel)]="reg.title" #title="ngModel" required>
                   <option value=""></option>
                   <option value="Mr">Mr</option>
                   <option value="Mrs">Mrs</option>
                   <option value="Miss">Miss</option>
                   <option value="Ms">Ms</option>
                 </select>
+                <div *ngIf="title.touched && !title.valid">
+                  <div *ngIf="title.errors['required']" [ngStyle]="{color:'red'}">Please enter title</div>
+                </div>
           </div>
           <div>
             <label for="firstname">First Name</label>
-            <input type="text" name="firstName" [(ngModel)]="reg.firstName" id="firstName"  />
+            <input type="text" name="firstName" [(ngModel)]="reg.firstName" id="firstName" #firstName="ngModel" required />
+            <div *ngIf="firstName.touched && !firstName.valid">
+              <div *ngIf="firstName.errors['required']" [ngStyle]="{color:'red'}">Please enter firstName</div>
+            </div>
+          </div>
           <div>
             <label for="lastname">Last Name</label>
-            <input type="text" name="lastName" [(ngModel)]="reg.lastName" />
+            <input type="text" name="lastName" [(ngModel)]="reg.lastName" #lastName="ngModel" required />
+            <div *ngIf="lastName.touched && !lastName.valid">
+              <div *ngIf="lastName.errors['required']" [ngStyle]="{color:'red'}">Please enter lastName</div>
+            </div>
           </div>
           <div>
             <label for="email">Email</label><br>
-            <input type="email" name="email" [(ngModel)]="reg.email"/>
+            <input type="email" name="email" [(ngModel)]="reg.email" required #email="ngModel"/>
+            <div *ngIf="email.touched&& !email.valid">
+              <div *ngIf="email.errors['required']" [ngStyle]="{color:'red'}">Please enter email</div>
+            </div>
           </div>
           <div>
             <label for="password">Password</label>
-            <input type="password" name="password" #password="ngModel" id="password" [(ngModel)]="reg.password" />
-          <div>
-            <label for="confirmp">Confirm Password</label>
-            <input type="password" name="confirmp" required/>
-          </div>
-          <div>
-            <label for="dob">Date_of_Birth</label>
-            <input type="date" name="dob" [(ngModel)]="reg.dob"/>
-          </div>
-          <div>
-            <label for="mobile">Phone Number</label>
-            <input type="text" name="mobile" id="mobile" [(ngModel)]="reg.phoneNumber" />
-        </div>
-          </div>
-          <div>
+            <input type="password" name="password" #password="ngModel" id="password" [(ngModel)]="reg.password"  required
+            minlength="8" maxlength="15" 
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
+            <div *ngIf="password.touched && !password.valid">
+              <div *ngIf="password.errors['required']" [ngStyle]="{color:'red'}">Please enter password</div>
+              <div *ngIf="password.errors['pattern']" [ngStyle]="{color:'red'}">
+                <ul>
+                <li>More the 8 charcter</li>
+                <li>Alphanumeric character</li>
+                <li>One Upper Case</li>
+                <li>One Lower Case</li>
+                <li>One Special Character</li>
+               </ul>
+              </div>
+              </div>
+            </div>  
+            <!-- <div>
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" name="confirmpassword" [(ngModel)]="password" pattern="{{password.value}}" #confirmpassword="ngModel" required />
+                <div *ngIf="confirmpassword.errors['pattern']" [ngStyle]="{color:'red'}">Password not match </div>
+            </div> -->
+              <div>
+                <label for="dob">Date_of_Birth</label>
+                <input type="date" name="dob" [(ngModel)]="reg.dob" required #dob="ngModel"/>
+                <div *ngIf="dob.touched && !dob.valid">
+                  <div *ngIf="dob.errors['required']" [ngStyle]="{color:'red'}">Date of Birth is required</div>
+                </div>
+              </div>
+              <div>
+                <label for="mobile">Phone Number</label>
+                <input type="text" name="mobile" id="mobile"  [(ngModel)]="reg.phoneNumber" 
+                pattern="^[0-9]{10}" minlength="10" #mobile="ngModel" required/>
+                <div *ngIf="mobile.touched && !mobile.valid" [ngStyle]="{color:'red'}">
+                  <div *ngIf="mobile.errors['required']">Mobile is required</div>
+                  <div *ngIf="mobile.errors['minlength']">Should be 10 digits</div>
+                  <div *ngIf="mobile.errors['pattern']">Wrong format for mobile number</div>
+              </div>
+            </div>
+          <div *ngIf="registerForm.valid">
             <button class="signup">Sign Up</button>
-            <button class="cancel" (click)="onReset()" type="reset">Cancel</button>
           </div>
-        </div>
+          <button class="cancel" (click)="onReset()" type="reset">Cancel</button>
         </div>
       </form>
     </div>
+</div>

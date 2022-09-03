@@ -11,23 +11,29 @@ import { Router } from '@angular/router';
 export class PassengerComponent implements OnInit {
 
   constructor(private airService: AirlinesService, private route: Router) { }
+  
+  n : number;
 
-  passanger:PassengerDetails=new PassengerDetails();
+  passanger: PassengerDetails[] = [];
+
+  p : PassengerDetails;
 
   addPassenger()
   {
     this.airService.savePassenger(this.passanger).subscribe(data=>
       {
-        this.passanger = new PassengerDetails();
+        this.airService.passengerDetails=this.passanger;
         this.route.navigate(['userhome/booktickets/seat-select/passenger/payment']);
       });
-    
-    
   }
 
-  ngOnInit(): void {
-    this.passanger.seatNumber=this.airService.selectedSeat;
-    this.passanger.ticketid=this.airService.ticketid;
+  ngOnInit() {
+    for(var i=0;i<this.airService.totalPassenger;i++){
+      this.p = new PassengerDetails();
+      this.p.ticketid = this.airService.ticketid;
+      this.p.seatNumber = this.airService.selectedSeat.pop();
+      this.passanger.push(this.p);
+    }
   }
 
 }

@@ -1,0 +1,74 @@
+
+<table>
+    <tr *ngFor="let l of p">
+        <div class="contenido">
+            <div class="ticket">
+              <div class="hqr">
+                <div class="column left-one"></div>
+                <div class="column center">
+                  <div id="qrcode"></div>
+                </div>
+                <div class="column right-one"></div>
+              </div>
+              </div>
+              <div class="details">
+                <div class="tinfo">
+                  flight id
+                </div>
+                <div class="tdata name">
+                  {{t.flightId}}
+                </div>
+                <div class="tinfo">
+                  passenger name
+                </div>
+                <div class="tdata name">
+                  {{l.name}}
+                </div>
+                <div class="tinfo">
+                  pnr number
+                </div>
+                <div class="tdata">
+                  {{l.seatNumber}}{{t.ticketid}}
+                </div> 
+                <div class="tdata">
+                  Wing Airlines
+                </div>      
+                <div class="tinfo">
+                  ticket type
+                </div>
+                <div class="tdata">
+                  {{t.type_of_ticket}}
+                </div>  
+                <div class="masinfo">
+                  <div class="left">
+                   <div class="tinfo">
+                  date
+                </div>
+                <div class="tdata nesp">
+                  {{f.journey_date}}
+                </div>  
+                  </div>
+                  <div class="right">
+                  <div class="tinfo">
+                  Departure Airport
+                </div>
+                <div class="tdata nesp">
+                  {{f.source}} Airport
+                </div> 
+                  </div>
+                  <div class="tinfo">
+                    Destination Airport
+                  </div>
+                  <div class="tdata nesp">
+                    {{f.destination}} Airport
+                  </div>
+                </div>
+              </div>
+            </div>
+    </tr>
+    <div class="btn">
+      <button routerLink="../../../../../">Home</button>
+    </div>
+</table>
+
+  

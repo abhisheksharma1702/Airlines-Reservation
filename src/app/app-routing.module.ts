@@ -16,11 +16,15 @@ import { PassengerComponent } from './modules/passenger/passenger.component';
 import { PaymentComponent } from './modules/payment/payment.component';
 import { CancelTicketComponent } from './modules/cancel-ticket/cancel-ticket.component';
 import { SeatComponent } from './modules/seat/seat.component';
+import { TicketComponent } from './modules/ticket/ticket.component';
+import { UpdateFlightComponent } from './modules/update-flight/update-flight.component';
+import { ChangepasswordComponent } from './modules/changepassword/changepassword.component';
 
 const routes: Routes = [
   {path: 'userhome/flight-search', component:  FlightSearchComponent},
   {path: 'userhome/booktickets/seat-select', component: SeatComponent},
   {path: 'adminhome/add-flight', component: AddFlightComponent},
+  {path: 'adminhome/update-flight', component: UpdateFlightComponent},
   {path:'login', component: LoginComponent},
   {path: 'login/userlogin', component: UserloginComponent},
   {path:'login/adminlogin', component:AdminloginComponent},
@@ -33,7 +37,9 @@ const routes: Routes = [
   {path: 'userhome/booktickets', component: BookTicketsComponent},
   {path: 'userhome/booktickets/seat-select/passenger', component:PassengerComponent},
   {path: 'userhome/booktickets/seat-select/passenger/payment', component:PaymentComponent},
-  {path: 'userhome/cancelticket', component:CancelTicketComponent}
+  {path: 'userhome/cancelticket', component:CancelTicketComponent},
+  {path: 'userhome/booktickets/seat-select/passenger/payment/ticket', component:TicketComponent},
+  {path: 'forget_password', component:ChangepasswordComponent}
 ];
 
 @NgModule({
