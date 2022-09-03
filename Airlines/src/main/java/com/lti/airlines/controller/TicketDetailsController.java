@@ -32,8 +32,8 @@ public class TicketDetailsController {
 		tds.cancelTicket(Id);
 	}
 	
-	@PutMapping("/confirmTicket/{Id}")
-	public void confirmTicket(@PathVariable Integer Id, @RequestBody Integer s)
+	@PutMapping("/confirmTicket")
+	public void confirmTicket(@RequestBody Integer Id)
 	{
 		tds.confirmTicket(Id);
 	}
@@ -41,5 +41,10 @@ public class TicketDetailsController {
 	@GetMapping("/findTicketsForUser/{id}")
 	public List<TicketDetails> findForUser(@PathVariable Integer id){
 		return tds.allticket(id);
+	}
+	
+	@GetMapping("findTicket/{id}")
+	public TicketDetails findTicket(@PathVariable Integer id) {
+		return tds.find(id);
 	}
 }

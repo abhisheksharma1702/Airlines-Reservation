@@ -1,5 +1,7 @@
 package com.lti.airlines.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +14,14 @@ public class PassangerDetailsService {
 	@Autowired
 	private PassangerDetailsRepository pdr;
 	
-	public void saveAll(PassangerDetails pd)
+	public void saveAll(List<PassangerDetails> pd)
 	{
-		pdr.save(pd);
+		for(PassangerDetails p : pd) {
+			pdr.save(p);
+		}
 	}
 	
-	public void getDetails() {
-		pdr.findAll();
+	public List<PassangerDetails> getDetails() {
+		return pdr.findAll();
 	}
 }

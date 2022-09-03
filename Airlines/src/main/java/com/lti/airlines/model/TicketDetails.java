@@ -1,14 +1,19 @@
 package com.lti.airlines.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tds6")
+@Table(name="tds11")
 public class TicketDetails {
 
 	@Id
@@ -23,6 +28,16 @@ public class TicketDetails {
 	private String ticket_amount;
 	private int userid;
 	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+	@JoinColumn(name = "ticketid")
+	private List<PassangerDetails> passangerList = null;
+	
+	public List<PassangerDetails> getPassangerList() {
+		return passangerList;
+	}
+	public void setPassangerList(List<PassangerDetails> passangerList) {
+		this.passangerList = passangerList;
+	}
 	public int getTicketid() {
 		return ticketid;
 	}
@@ -71,16 +86,18 @@ public class TicketDetails {
 	public void setUserid(int user_id) {
 		this.userid = user_id;
 	}
-	public TicketDetails(int no_of_pasanger, String type_of_ticket, String date_of_booking, String status,
-			int flight_id, String ticket_amount, int user_id) {
+	public TicketDetails(int ticketid, int no_of_pasanger, String type_of_ticket, String date_of_booking, String status,
+			int flightId, String ticket_amount, int userid, List<PassangerDetails> passangerList) {
 		super();
+		this.ticketid = ticketid;
 		this.no_of_pasanger = no_of_pasanger;
 		this.type_of_ticket = type_of_ticket;
 		this.date_of_booking = date_of_booking;
 		this.status = status;
-		this.flightId = flight_id;
+		this.flightId = flightId;
 		this.ticket_amount = ticket_amount;
-		this.userid = user_id;
+		this.userid = userid;
+		this.passangerList = passangerList;
 	}
 	public TicketDetails() {
 		super();

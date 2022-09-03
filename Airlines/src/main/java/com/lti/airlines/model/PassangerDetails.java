@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="pds2")
+@Table(name="pds5")
 public class PassangerDetails {
 
 	@Id
@@ -18,6 +18,7 @@ public class PassangerDetails {
 	private String gender;
 	private int age;
 	private int ticketid;
+	
 	public int getPid() {
 		return pid;
 	}

@@ -8,4 +8,6 @@ import com.lti.airlines.model.Registation;
 public interface RegistationRepository extends JpaRepository<Registation,Integer> {
 	
 	 List<Registation> findByEmailAndPassword(String email, String password);
+	 
+	 Registation findByEmail(String email);
 }

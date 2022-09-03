@@ -1,5 +1,7 @@
 package com.lti.airlines.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +17,7 @@ public class PassangerDetailsController {
 	PassangerDetailsService pds;
 	
 	@PostMapping("/passanger")
-	public void add(@RequestBody PassangerDetails pd)
+	public void add(@RequestBody List<PassangerDetails> pd)
 	{
 		pds.saveAll(pd);
 	}

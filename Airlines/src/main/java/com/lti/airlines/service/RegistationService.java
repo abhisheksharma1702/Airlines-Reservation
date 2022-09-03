@@ -41,4 +41,8 @@ public class RegistationService {
 	public List<Registation> login(String email, String password) {
 		return regrepo.findByEmailAndPassword(email, password);
 	}
+	
+	public Registation getUser(String email) {
+		return regrepo.findByEmail(email);
+	}
 }

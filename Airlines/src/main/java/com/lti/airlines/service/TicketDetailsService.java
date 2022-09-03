@@ -42,4 +42,9 @@ public class TicketDetailsService {
 		tdr.save(t);
 		}
 	}
+	
+	public TicketDetails find(Integer id)
+	{
+		return tdr.findByTicketid(id);
+	}
 }

@@ -10,4 +10,5 @@ public interface FlightDetailsRepository extends JpaRepository<FlightDetails, In
 	
 	List<FlightDetails> findBySourceAndDestination(String source, String destination);
 	
+	FlightDetails findByFlightId(Integer flightId);
 }

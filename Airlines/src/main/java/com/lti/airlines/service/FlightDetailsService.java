@@ -36,5 +36,9 @@ public class FlightDetailsService {
 		}
 	}
 	
+	public FlightDetails findById(Integer id) {
+		return flightDetailsRepository.findByFlightId(id);
+	}
+	
 }
 

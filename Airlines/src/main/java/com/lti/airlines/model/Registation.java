@@ -2,7 +2,7 @@ package com.lti.airlines.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="User_Registation")
+@Table(name="User_Registation1")
 public class Registation {
 
 	@Id
@@ -12,6 +12,7 @@ public class Registation {
 	private String title;
 	private String firstName;
 	private String lastName;
+	@Column(unique=true) 
 	private String email;
 	private String password;
 	private String dob;

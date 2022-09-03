@@ -42,4 +42,9 @@ public class RegistationController {
 	public List<Registation> login(@PathVariable String email, @PathVariable String password){
 		return regService.login(email, password);
 	}
+	
+	@GetMapping("/user/{email}")
+	public Registation user(@PathVariable String email){
+		return regService.getUser(email);
+	}
 }
